@@ -3,92 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6fa">
-  <meta name="description" content="Mac Duo 是一款免费开源的 macOS 菜单栏 App。合上 MacBook，让桌面随着柔和暗角与渐变模糊，轻轻消隐。">
-  <meta property="og:title" content="Mac Duo — 让一天，轻轻落幕。">
-  <meta property="og:description" content="随 MacBook 合盖角度变化的柔和暗角与渐变模糊。免费开源，原生 macOS App。">
+  <meta name="theme-color" content="#fafafa">
+  <meta name="description" content="Mac Duo：合上 MacBook，让桌面随柔和暗角与渐变模糊消隐。免费开源的 macOS 菜单栏 App。">
+  <meta property="og:title" content="Mac Duo">
+  <meta property="og:description" content="合上屏幕，桌面柔和消隐。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://norvancc.github.io/mac-duo/">
   <meta property="og:image" content="https://norvancc.github.io/mac-duo/preview.png">
-  <title>Mac Duo — 让一天，轻轻落幕。</title>
+  <title>Mac Duo</title>
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="canonical" href="https://norvancc.github.io/mac-duo/">
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">跳到主要内容</a>
-  <header class="site-header wrap">
-    <a class="brand" href="./" aria-label="Mac Duo 首页"><img src="icon.png" width="38" height="38" alt=""><span>Mac Duo</span></a>
-    <nav aria-label="主导航">
-      <a href="#experience">体验</a>
-      <a href="#install">安装</a>
-      <a class="nav-source" href="https://github.com/norvancc/mac-duo">GitHub <span aria-hidden="true">↗</span></a>
-    </nav>
+  <header class="banner">
+    <a class="brand" href="./"><img src="icon.png" width="28" height="28" alt=""><span>Mac Duo</span></a>
+    <a class="source" href="https://github.com/norvancc/mac-duo">GitHub <span aria-hidden="true">↗</span></a>
   </header>
-  <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> 为合盖的那一刻而作</p>
-        <h1 id="hero-title">让一天，<br><span>轻轻落幕。</span></h1>
-        <p class="hero-description">合上 MacBook，桌面在柔和的暗角与模糊中消隐。一个小小的动效，为每次离开留一点仪式感。</p>
-        <div class="hero-actions">
-          <a class="button primary" href="https://github.com/norvancc/mac-duo/releases/download/v1.0.6/Mac-Duo-1.0.6-universal.dmg"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg>下载 Mac Duo</a>
-          <a class="text-link" href="https://github.com/norvancc/mac-duo">查看源码 <span aria-hidden="true">↗</span></a>
-        </div>
-        <p class="download-meta">v1.0.6 <span>·</span> macOS 14+ <span>·</span> 免费 & 开源</p>
-      </div>
-      <div class="experience" id="experience">
-        <div class="ambient" aria-hidden="true"></div>
-        <div class="demo-heading"><span><span class="live-dot"></span> 看看合盖的感觉</span><span class="mono" id="angle-display" aria-hidden="true">80°</span></div>
-        <div class="laptop">
-          <div class="display-shell">
-            <div class="camera" aria-hidden="true"></div>
-            <div class="display">
-              <img id="demo-frame" src="frame-80.png" width="1440" height="936" alt="桌面保持原位，柔和暗角从屏幕边缘向内收拢" fetchpriority="high">
-              <canvas id="demo-canvas" width="1440" height="936" aria-hidden="true"></canvas>
-            </div>
-          </div>
-          <div class="laptop-base" aria-hidden="true"><span></span></div>
-        </div>
-        <div class="demo-controls">
-          <button class="play-button" id="play" type="button" disabled aria-label="播放合盖演示"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="m7 4 9 6-9 6z"/></svg></button>
-          <div class="range-wrap"><label for="angle">合上</label><input type="range" id="angle" min="12" max="110" value="80" step="1" aria-label="模拟屏幕开合角度" aria-valuetext="80 度" disabled><span>展开</span></div>
-        </div>
-        <p class="demo-caption" id="demo-status">加载交互预览…</p>
-        <noscript><p class="demo-caption">启用 JavaScript 可拖动滑杆体验开合效果。</p></noscript>
-      </div>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <h1 id="title">Mac Duo</h1>
+      <p class="description">合上屏幕，桌面柔和消隐。</p>
+      <a class="download" href="https://github.com/norvancc/mac-duo/releases/download/v1.0.6/Mac-Duo-1.0.6-universal.dmg">下载 Mac Duo <span aria-hidden="true">↓</span></a>
+      <p class="meta">v1.0.6 · macOS 14+ · 免费开源</p>
     </section>
-    <div class="trust-strip wrap" aria-label="产品特点"><span>原生 macOS App</span><i aria-hidden="true"></i><span>Apple Silicon & Intel</span><i aria-hidden="true"></i><span>Apple 公证</span><i aria-hidden="true"></i><span>MIT 开源</span></div>
-    <section class="details wrap" aria-labelledby="details-title">
-      <div class="section-heading"><p class="eyebrow">细节，让告别更柔和</p><h2 id="details-title">画面不动。<br class="mobile-break">氛围在变。</h2><p>保留桌面原本的样子，只让光与边缘慢慢退场。</p></div>
-      <div class="feature-grid">
-        <article><div class="feature-art mask-art" aria-hidden="true"><div></div></div><span class="feature-number">01 / 柔和暗角</span><h3>像一张 Lomo 照片</h3><p>截图的位置与比例始终不变。柔边遮罩随着合盖角度收拢，边缘自然散入黑色。</p></article>
-        <article><div class="feature-art blur-art" aria-hidden="true"><span>Stay in the moment.</span><span>Stay in the moment.</span><span>Stay in the moment.</span></div><span class="feature-number">02 / 渐变模糊</span><h3>从清晰，到朦胧</h3><p>模糊从屏幕上方向下渐变，靠近转轴处保留更多细节。柔化程度可以随心调整。</p></article>
-        <article><div class="feature-art privacy-art" aria-hidden="true"><svg viewBox="0 0 80 80"><rect x="16" y="25" width="48" height="36" rx="8"/><path d="M29 25v-7a11 11 0 0 1 22 0v7M40 39v9"/></svg><span>只在这一刻。</span></div><span class="feature-number">03 / 留在本机</span><h3>一帧画面，短暂保留</h3><p>截图仅用于当前过渡，结束即从内存释放。不录音、不上传，没有统计或网络请求。</p></article>
-      </div>
-    </section>
-    <section class="install-section" id="install" aria-labelledby="install-title">
-      <div class="wrap install-layout">
-        <div><p class="eyebrow">准备好，轻轻合上</p><h2 id="install-title">三步，就绪。</h2><p class="install-intro">安静地待在菜单栏，<br>在你离开时，才出现。</p><a class="text-link" href="https://github.com/norvancc/mac-duo/releases/tag/v1.0.6">发行说明与 ZIP 下载 <span aria-hidden="true">↗</span></a></div>
-        <ol class="steps">
-          <li><span>1</span><div><h3>下载并安装</h3><p>打开 DMG，将 Mac Duo 拖入「应用程序」。支持 macOS 14 及以上，通用版本适用于 Apple Silicon 和 Intel。</p></div></li>
-          <li><span>2</span><div><h3>允许屏幕录制</h3><p>首次使用时，在系统「隐私与安全性」中允许 Mac Duo 截取屏幕，用来呈现过渡画面。</p></div></li>
-          <li><span>3</span><div><h3>试播，或轻轻合盖</h3><p>点击「全屏试播」体验五秒动效。兼容设备可自动跟随合盖角度；打开屏幕即退出效果。</p></div></li>
-        </ol>
-      </div>
-    </section>
-    <section class="faq wrap" aria-labelledby="faq-title">
-      <h2 id="faq-title">还想了解</h2>
-      <div class="questions">
-        <details><summary>我的 MacBook 支持自动合盖效果吗？<span aria-hidden="true">+</span></summary><p>自动效果需要兼容的铰链角度传感器，目前已在 Mac16,8 / macOS 15.7.9 验证，其他机型的支持情况可能不同。通用安装包支持两种处理器架构，并不代表每款设备都有可用的角度传感器。没有传感器时，仍可使用窗口预览；全屏试播需要正在使用的内置显示屏与录屏权限。</p></details>
-        <details><summary>会改变 Mac 的休眠行为吗？<span aria-hidden="true">+</span></summary><p>不会。Mac Duo 遵循系统原有的休眠行为，屏幕关闭后不会继续播放。唤醒后正常显示桌面。屏幕停在半合状态 12 秒未继续移动，也会自动退出效果。</p></details>
-        <details><summary>如何立即退出动效？<span aria-hidden="true">+</span></summary><p>打开屏幕，或按 Control + Option + Command + D。设置窗口激活时也可以按 Escape。关闭设置窗口后，App 仍驻留菜单栏；可从菜单栏退出。</p></details>
-        <details><summary>可以修改和分享这个项目吗？<span aria-hidden="true">+</span></summary><p>可以。Mac Duo 以 MIT 许可证开源，欢迎查看、修改和分发源码。它是一个独立的视觉实验项目，不隶属于 Apple。<a href="https://github.com/norvancc/mac-duo">前往 GitHub ↗</a></p></details>
-      </div>
-    </section>
-    <section class="last-call wrap"><img src="icon.png" width="64" height="64" alt=""><h2>给合盖，添一点温柔。</h2><a class="button primary" href="https://github.com/norvancc/mac-duo/releases/download/v1.0.6/Mac-Duo-1.0.6-universal.dmg">免费下载 Mac Duo <span aria-hidden="true">↓</span></a><p>已签名并通过 Apple 公证 · 无需注册</p></section>
+    <figure class="preview">
+      <img src="preview.png" width="1440" height="936" alt="Mac Duo 合盖效果：桌面保持原位，画面上方渐渐模糊，边缘柔和地淡入黑色。预览使用生成的示例桌面。" fetchpriority="high">
+    </figure>
   </main>
-  <footer class="site-footer wrap"><span>Mac Duo <span class="footer-credit">by <a href="https://github.com/norvancc">Norvan</a></span></span><div><a href="https://github.com/norvancc/mac-duo/blob/main/LICENSE">MIT License</a><a href="https://github.com/norvancc/mac-duo/issues">反馈问题 ↗</a><a href="https://github.com/norvancc/mac-duo">GitHub ↗</a></div></footer>
 </body>
 </html>
