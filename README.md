@@ -2,7 +2,7 @@
 
 A native macOS menu bar app that turns closing your MacBook into a soft, cinematic fade.
 
-[简体中文](README.zh-CN.md) · [MIT License](LICENSE)
+[Website & interactive preview](https://norvancc.github.io/mac-duo/) · [Download](https://github.com/norvancc/mac-duo/releases/latest) · [简体中文](README.zh-CN.md) · [MIT License](LICENSE)
 
 Mac Duo captures your built-in display once, keeps the screenshot in place, and gradually closes a feathered trapezoid mask over it as you lower the lid. A vertical gradient of Gaussian blur adds a Lomo-style vignette. Text, windows, and icons retain their original coordinates and proportions.
 
@@ -26,12 +26,18 @@ The current settings UI is in Simplified Chinese.
 
 - macOS 14 or later and a Metal-capable Mac.
 - A MacBook exposing the supported lid-angle HID sensor for automatic triggering. Verified on Mac16,8 running macOS 15.7.9; other models may differ.
-- Xcode with a macOS SDK and Swift 5.9 or later. Development builds have been tested with Swift 6.2.
-- An **Apple Development** signing identity for the packaged app. Use your own identity; no certificates or private keys are included.
 
 The windowed sample preview works without screen-recording permission. Full-screen capture requires macOS Screen Recording permission and an active built-in display. The full-screen demo does not require a lid sensor.
 
+## Download and install
+
+[Download Mac Duo 1.0.6 (DMG)](https://github.com/norvancc/mac-duo/releases/download/v1.0.6/Mac-Duo-1.0.6-universal.dmg). Open the disk image and drag **Mac Duo** to **Applications**.
+
+The universal app includes Apple Silicon and Intel binaries, is signed with Developer ID, and is notarized by Apple. Architecture support does not guarantee a compatible lid sensor. A ZIP archive and SHA-256 checksums are available on the [release page](https://github.com/norvancc/mac-duo/releases/tag/v1.0.6).
+
 ## Build and run
+
+Building from source requires Xcode with a macOS SDK and Swift 5.9 or later (tested with Swift 6.2). The local packaging script requires your own **Apple Development** signing identity. No certificates or private keys are included.
 
 ```sh
 git clone https://github.com/norvancc/mac-duo.git
@@ -98,6 +104,24 @@ Core tests cover angle geometry, fixed hinge endpoints, numerical stability, and
 | `scripts` | Local packaging and icon generation |
 
 There are no third-party package dependencies. See [CONTRIBUTING.md](CONTRIBUTING.md) for development notes.
+
+### Distribution and website
+
+To create universal DMG and ZIP packages, use your own Developer ID Application identity and a `notarytool` keychain profile:
+
+```sh
+MAC_DUO_NOTARY_PROFILE='your-notary-profile' bash scripts/build-release.sh
+```
+
+Optionally set `MAC_DUO_RELEASE_SIGNING_IDENTITY` to a specific certificate name or SHA-1. The script builds into `build/distribution/<version>/`, signs with the hardened runtime, notarizes and staples the app and DMG, verifies Gatekeeper acceptance, and writes `SHA256SUMS.txt`. It does not overwrite the local development app.
+
+The static website lives in `docs/` and is served by GitHub Pages from `main`. To preview it locally:
+
+```sh
+python3 -m http.server 8765 --directory docs
+```
+
+Open `http://localhost:8765`. The interactive demo interpolates seven synthetic render-check frames; it does not access the browser's screen or sensors.
 
 ## References
 
