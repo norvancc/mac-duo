@@ -2,7 +2,7 @@
 
 A native macOS menu bar app that turns closing your MacBook into a soft, cinematic fade.
 
-[Website & interactive preview](https://norvancc.github.io/mac-duo/) · [Download](https://github.com/norvancc/mac-duo/releases/latest) · [简体中文](README.zh-CN.md) · [MIT License](LICENSE)
+[Website](https://norvancc.github.io/mac-duo/) · [Download](https://github.com/norvancc/mac-duo/releases/latest) · [简体中文](README.zh-CN.md) · [MIT License](LICENSE)
 
 Mac Duo captures your built-in display once, keeps the screenshot in place, and gradually closes a feathered trapezoid mask over it as you lower the lid. A vertical gradient of Gaussian blur adds a Lomo-style vignette. Text, windows, and icons retain their original coordinates and proportions.
 
@@ -121,7 +121,7 @@ The static website lives in `docs/` and is served by GitHub Pages from `main`. T
 python3 -m http.server 8765 --directory docs
 ```
 
-Open `http://localhost:8765`. The interactive demo interpolates seven synthetic render-check frames; it does not access the browser's screen or sensors.
+Open `http://localhost:8765`. The page contains a static preview generated from the app's sample desktop. It uses no JavaScript and does not access the browser's screen or sensors.
 
 ## References
 

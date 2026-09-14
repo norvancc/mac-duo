@@ -2,7 +2,7 @@
 
 让 MacBook 合盖时的桌面，像 Lomo 照片一样柔和消隐。
 
-[项目网页与交互预览](https://norvancc.github.io/mac-duo/) · [下载](https://github.com/norvancc/mac-duo/releases/latest) · [English](README.md) · [MIT 许可证](LICENSE)
+[项目网页](https://norvancc.github.io/mac-duo/) · [下载](https://github.com/norvancc/mac-duo/releases/latest) · [English](README.md) · [MIT 许可证](LICENSE)
 
 原生 macOS 菜单栏 App。合盖时只截取一帧内置屏幕画面，**截图的位置和比例保持不变**，通过随铰链角度收拢的梯形柔边遮罩，配合由上至下的渐变高斯模糊，逐渐淡入黑色。文字、窗口和图标都不会被拉伸。
 
@@ -96,7 +96,7 @@ MAC_DUO_NOTARY_PROFILE='your-notary-profile' bash scripts/build-release.sh
 
 可通过 `MAC_DUO_RELEASE_SIGNING_IDENTITY` 指定证书名称或 SHA-1。产物及校验文件写入 `build/distribution/<版本>/`，不会覆盖本地开发 App。
 
-静态网页位于 `docs/`，由 GitHub Pages 托管。运行 `python3 -m http.server 8765 --directory docs` 后打开 `http://localhost:8765` 即可预览。网页动效使用七帧程序生成的示例桌面插值，不读取浏览器的屏幕或传感器。
+静态网页位于 `docs/`，由 GitHub Pages 托管。运行 `python3 -m http.server 8765 --directory docs` 后打开 `http://localhost:8765` 即可预览。网页仅展示程序生成的示例桌面预览图，不加载 JavaScript，也不读取浏览器的屏幕或传感器。
 
 ## 许可证
 
